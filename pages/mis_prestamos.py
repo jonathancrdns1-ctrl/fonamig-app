@@ -79,7 +79,7 @@ def mostrar_detalle(prestamo_id):
     # 3. Preparar datos para la tabla
     df_cuotas = pd.DataFrame([{
         '#': c.numero_cuota,
-        'Vencimiento': c.fecha_vencimiento,
+        'Vencimiento': c.fecha_vencimiento.strftime('%d/%m/%Y'), # <--- CAMBIO 1: FECHA CORTA
         'Valor': f"${c.monto_total:,.2f}",
         'Capital': f"${c.monto_capital:,.2f}",
         'Interés': f"${c.monto_interes:,.2f}",
@@ -99,11 +99,17 @@ def mostrar_detalle(prestamo_id):
             ]),
             html.Hr(),
             html.H6("Plan de Amortización"),
+            
+            # Tabla interactiva
             dash_table.DataTable(
                 data=df_cuotas.to_dict('records'),
                 columns=[{"name": i, "id": i} for i in df_cuotas.columns],
-                style_cell={'textAlign': 'center'},
+                style_cell={'textAlign': 'center', 'padding': '5px'},
                 style_header={'backgroundColor': 'black', 'color': 'white', 'fontWeight': 'bold'},
+                
+                # <--- CAMBIO 2: PROPIEDAD PARA SCROLL HORIZONTAL
+                style_table={'overflowX': 'auto'}, 
+                
                 style_data_conditional=[
                     {
                         'if': {'filter_query': '{Estado} = "Pagado"'},

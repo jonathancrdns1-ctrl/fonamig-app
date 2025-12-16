@@ -1,0 +1,104 @@
+/* --- 1. IMPORTAR FUENTE "POPPINS" (MODERNA Y LEGIBLE) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Gris muy suave, descansa la vista */
+    color: #333;
+}
+
+/* --- 2. TARJETAS FLOTANTES (ELEGANCIA) --- */
+.card {
+    border: none !important; /* Adiós bordes negros feos */
+    border-radius: 20px !important; /* Bordes muy redondos */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra suave y difusa */
+    transition: all 0.3s ease;
+    overflow: hidden; /* Para que el contenido no se salga de las curvas */
+    background: white;
+}
+
+/* Efecto al pasar el mouse por encima (DIVERSIÓN) */
+.hover-zoom:hover {
+    transform: translateY(-8px); /* Se eleva */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* Sombra más fuerte */
+    cursor: pointer;
+}
+
+/* --- 3. ENCABEZADOS DE TARJETAS --- */
+.card-header {
+    background-color: white !important;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 700;
+    color: #1a237e; /* Azul Navy Clásico */
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* --- 4. BOTONES (MODERNOS) --- */
+.btn {
+    border-radius: 50px !important; /* Botones tipo píldora */
+    padding: 10px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    transform: scale(1.05); /* Crece un poquito */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Botones específicos */
+.btn-primary {
+    background: linear-gradient(135deg, #1A237E 0%, #3949AB 100%) !important;
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%) !important;
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #c62828 0%, #ef5350 100%) !important;
+    border: none;
+}
+
+/* --- 5. TITULOS CON DEGRADADO (UNIQUE TOUCH) --- */
+.text-gradient {
+    background: -webkit-linear-gradient(45deg, #1A237E, #29b6f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* --- 6. ELEMENTOS DE FORMULARIO (AMIGABLES PARA MAYORES) --- */
+.form-control, .form-select {
+    border-radius: 15px !important;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    background-color: #f9f9f9;
+    font-size: 1.1rem; /* Letra un poco más grande */
+}
+
+.form-control:focus {
+    border-color: #3949AB;
+    box-shadow: 0 0 0 0.2rem rgba(57, 73, 171, 0.25);
+    background-color: white;
+}
+
+/* --- 7. NAVBAR PERSONALIZADO --- */
+.navbar-custom {
+    background: linear-gradient(90deg, #1A237E 0%, #0d47a1 100%) !important;
+    box-shadow: 0 4px 15px rgba(26, 35, 126, 0.3);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
